@@ -1,10 +1,12 @@
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y openssh-server
+RUN apt-get install -y nasm
 RUN apt-get install -y mesa-va-drivers
 RUN apt-get install -y libdrm-dev
 RUN apt-get install -y vainfo
 RUN apt-get install -y git build-essential gcc make yasm autoconf automake cmake libtool checkinstall wget software-properties-common pkg-config libmp3lame-dev libunwind-dev zlib1g-dev libssl-dev
+RUN apt-get install -y libfdk-aac-dev libass-dev libopus-dev libtheora-dev libvorbis-dev libvpx-dev libssl-dev
 RUN apt-get update \
     && apt-get clean \
     && apt-get install -y --no-install-recommends libc6-dev libgdiplus wget software-properties-common
