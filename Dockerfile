@@ -36,7 +36,7 @@ RUN make
 RUN make install
 WORKDIR /video
 RUN ffmpeg -i RW20seconds_2.mp4 -ss 00:00:50.0 -codec copy -t 20 output.mp4
-RUN ffmpeg -i RW20seconds_2.mp4 -vcodec libx264 -acodec aac output.264
+RUN ffmpeg -i RW20seconds_2.mp4 -codec:v libx264 -acodec aac output.264
 RUN ls
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
